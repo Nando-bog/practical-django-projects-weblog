@@ -1,6 +1,9 @@
 Coltrane project from Bennett, J. (2008). Practical Django Projects (Expert’s Voice in Web Development) (1 edition.). Apress.
 
 Some modification were necessary in order to make the project work with Django 1.6, and others were choice:
+- Prepopulated fields work differently. Implemented through admin.py and prepopulated_fields for each ModelAdmin.
+- Used django-ckeditor-updated instead of markup. I totally prefer a full WYSIWYG with HTML.
+- django-taggit to handle tags instead of what the book uses. Django-tagging seems to have died out.
 
 Requirements:
 Django==1.6.1
