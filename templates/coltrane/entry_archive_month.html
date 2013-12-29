@@ -1,0 +1,27 @@
+<!doctype html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Archive for {{ month|date:"F" }}</title>
+        </head>
+        <body>
+            <p>Found {{ object_list|length }} </p>
+            <table border="1" width="50%" height="auto">
+                <tr>
+                    <th>Title and Author</td>
+                    <th>Excerpt</td>
+                    <th>Body</td>
+                    <th>Publication date</td>
+                </tr>
+                {% for n in object_list %}
+                <tr>
+                    <td>{{ n.title }}<br/>{{ n.author }}</td>
+                    <td>{{ n.excerpt }}</td>
+                    <td>{{ n.body }}</td>
+                    <td>{{n.pub_date|date:"Y/m/d"}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </body>
+    </html>

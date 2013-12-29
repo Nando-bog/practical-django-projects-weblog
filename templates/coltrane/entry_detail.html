@@ -2,13 +2,14 @@
     <html>
         <head>
             <meta charset="utf-8"/>
-            <title>{{ entry.title }}</title>
+            <title>{{ object.title }}</title>
         </head>
         <body>
-            {% if entry %}
-                <h1>{{ entry.title }}</h1>
-                <p> Published by {{ entry.author.first_name }} on {{ entry.pub_date|date:"l F d, Y" }} at {{ entry.pub_date|date:"g:m a" }} </p>
-                <p> {{ entry.body|safe }}</p>
+            {% if object %}
+                <h1>{{ object.title }}</h1>
+                <p> Published by {{ object.author.first_name }} on {{ object.pub_date|date:"l F d, Y" }} at {{ object.pub_date|date:"g:m a" }} </p>
+                <p> {{ object.body|safe }}</p>
             {% endif %}
+            <p>uh?</p>
         </body>
     </html>

@@ -4,6 +4,7 @@ Some modification were necessary in order to make the project work with Django 1
 - Prepopulated fields work differently. Implemented through admin.py and prepopulated_fields for each ModelAdmin.
 - Used django-ckeditor-updated instead of markup. I totally prefer a full WYSIWYG with HTML.
 - django-taggit to handle tags instead of what the book uses. Django-tagging seems to have died out.
+- Date-based generic views work differently in Django 1.6.
 
 Requirements:
 Django==1.6.1
