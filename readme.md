@@ -5,6 +5,10 @@ Some modification were necessary in order to make the project work with Django 1
 - Used django-ckeditor-updated instead of markup. I totally prefer a full WYSIWYG with HTML.
 - django-taggit to handle tags instead of what the book uses. Django-tagging seems to have died out.
 - Date-based generic views work differently in Django 1.6.
+- Changes to generic views imply changes to the decoupling urls section code.
+- models.permalink no longer good. Implemented django.core.urlresolvers.reverse instead as recommended by docs.
+-Still a problem with UTC time in the pub_date. Does not use local timezone for the URL.
+
 
 Requirements:
 Django==1.6.1

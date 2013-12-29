@@ -1,7 +1,9 @@
 #coding=utf8
 import datetime
+from django.utils.timezone import get_current_timezone timezone
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 from django.db import models
 from taggit.managers import TaggableManager
 
@@ -60,4 +62,7 @@ class Entry(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return "weblog/%s/%s/" % (self.pub_date.strftime("%Y/%m/%d").lower(), self.slug)
+        #return "weblog/%s/%s/" % (self.pub_date.strftime("%Y/%m/%d").lower(), self.slug)
+        return reverse('coltrane_entry_detail', kwargs = {'year': self.pub_date.strftime("%Y"), 'month':self.pub_date.strftime("%m"), 'day':self.pub_date.strftime("%d"),'slug':self.slug})
+    
+    
