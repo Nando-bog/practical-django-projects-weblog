@@ -1,6 +1,5 @@
 #coding=utf8
 import datetime
-from django.utils.timezone import get_current_timezone timezone
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
@@ -23,8 +22,8 @@ class Category(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return "/categories/%s/" % self.slug
-    
+        return "weblog/categories/%s/" % self.slug
+        #return reverse('coltrane_category_detail', (), kwargs = {'slug': self.slug})
 
 class Entry(models.Model):
     #Constants for the status field.
